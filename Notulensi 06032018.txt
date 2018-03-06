@@ -1,0 +1,25 @@
+>> Topik : 6 Besar Cryptocurrency
+	1. Bitcoin (Bersama)
+	2. Etherium (Azra)
+	3. Ripple (Fajar)
+	4. Bitcoin cash (Alifia)
+	5. Litecoin (Randi)
+	6. Stellar (Anggita)
+
+>> Visualisasi 
+	Perbandingan :
+	> profitable
+	> perubahan tidak signifikan
+	Informasi awal mengenai cryptocurrency(perkenalan)
+	Tips and trick trading	
+	Summary data
+
+>> Data yang harus di cari
+	Sejarah (Awal mula)
+	Pengenalan(Informasi)
+	Naik Turun Harga/bulan
+	Kurva Harga/bulan
+	Legalitas di berbagai negara
+		
+Note 
+* ada sumbernya	
