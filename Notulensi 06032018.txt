@@ -21,5 +21,3 @@
 	Kurva Harga/bulan
 	Legalitas di berbagai negara
 		
-Note 
-* ada sumbernya	
