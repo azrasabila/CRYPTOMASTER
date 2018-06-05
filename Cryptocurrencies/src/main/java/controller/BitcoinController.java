@@ -55,7 +55,7 @@ public class BitcoinController {
                 mrkt.setHigh((double) high.getNumericCellValue());
                 mrkt.setLow((double) low.getNumericCellValue());
                 mrkt.setClose((double) close.getNumericCellValue());
-                mrkt.setVolume((int) volume.getNumericCellValue());
+                mrkt.setVolume((int) (long) volume.getNumericCellValue());
                 mrkt.setMarketCap((long) marketCap.getNumericCellValue());
                 
                 this.bitcoinMarketCap.add(mrkt);

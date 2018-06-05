@@ -42,8 +42,7 @@ public class Table extends javax.swing.JPanel {
         model.addColumn("Volume");
         model.addColumn("Market Cap");
         model.addColumn("Fluktuasi");
-        String key = String.valueOf(jComboBox1.getSelectedItem());
-        loadDataBitcoin("All");
+        
         
     }
 
@@ -65,6 +64,9 @@ public class Table extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel3.setText("Mata Uang");
 
@@ -85,6 +87,11 @@ public class Table extends javax.swing.JPanel {
         jLabel2.setText("Filter Bulan");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -92,6 +99,11 @@ public class Table extends javax.swing.JPanel {
         });
 
         Ok.setText("OK");
+        Ok.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                OkItemStateChanged(evt);
+            }
+        });
         Ok.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OkMouseClicked(evt);
@@ -118,6 +130,22 @@ public class Table extends javax.swing.JPanel {
 
         jLabel5.setText("Mata Uang");
 
+        jLabel1.setText("Filter Tahun");
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "All", "2017", "2018" }));
+        jComboBox3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBox3ItemStateChanged(evt);
+            }
+        });
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("di semua bulan dan semua tahun");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,14 +160,18 @@ public class Table extends javax.swing.JPanel {
                             .addComponent(jLabel5))
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Ok))
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Ok))))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel6))
                 .addContainerGap(793, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1005, Short.MAX_VALUE)
                     .addContainerGap()))
@@ -157,13 +189,19 @@ public class Table extends javax.swing.JPanel {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Ok))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addComponent(jLabel4)
-                .addContainerGap(519, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(448, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(124, 124, 124)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGap(211, 211, 211)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(32, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -171,8 +209,20 @@ public class Table extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         String ket = jComboBox2.getSelectedItem().toString();
+        String bulan = jComboBox1.getSelectedItem().toString();
+        String tahun = jComboBox3.getSelectedItem().toString();
 
         jLabel4.setText("Tabel Historical Data " + ket);
+        
+        if (tahun.equals("All") && bulan.equals("All"))
+            jLabel6.setText("pada semua bulan dan semua tahun");
+        else if (bulan.equals("All"))
+            jLabel6.setText("pada tahun " + tahun);
+        else if (tahun.equals("All"))
+            jLabel6.setText("dibulan " + bulan + " di semua tahun");
+        else if (!tahun.equals("All") && !bulan.equals("All"))
+            jLabel6.setText("pada bulan " + bulan + " pada tahun " + tahun);
+        
         model = new DefaultTableModel();
         jTable1.setModel(model);
         model.addColumn("Date");
@@ -198,38 +248,40 @@ public class Table extends javax.swing.JPanel {
         //loadDataBitcoin(jComboBox1.getSelectedItem().toString());
         String bulan = jComboBox1.getSelectedItem().toString();
         String value = jComboBox2.getSelectedItem().toString();
+        String tahun = jComboBox3.getSelectedItem().toString();
 
         if (value == "Bitcoin")
-        loadDataBitcoin(bulan);
+        loadDataBitcoin(bulan, tahun);
         else if (value == "Bitcoin Cash")
-        loadDataBitcoinCash(bulan);
+        loadDataBitcoinCash(bulan, tahun);
         else if (value == "Etherium")
-        loadDataEtherium(bulan);
+        loadDataEtherium(bulan, tahun);
         else if (value == "Litecoin")
-        loadDataLitecoin(bulan);
+        loadDataLitecoin(bulan, tahun);
         else if (value == "Ripple")
-        loadDataRipple(bulan);
+        loadDataRipple(bulan, tahun);
         else if (value == "Stellar")
-        loadDataStellar(bulan);
+        loadDataStellar(bulan, tahun);
 
     }//GEN-LAST:event_OkActionPerformed
 
     private void OkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OkMouseClicked
         String bulan = jComboBox1.getSelectedItem().toString();
         String value = jComboBox2.getSelectedItem().toString();
+        String tahun = jComboBox3.getSelectedItem().toString();
         
         if (value == "Bitcoin")
-            loadDataBitcoin(bulan);
+            loadDataBitcoin(bulan, tahun);
         else if (value == "Bitcoin Cash")
-            loadDataBitcoinCash(bulan);
+            loadDataBitcoinCash(bulan, tahun);
         else if (value == "Etherium")
-            loadDataEtherium(bulan);
+            loadDataEtherium(bulan, tahun);
         else if (value == "Litecoin")
-            loadDataLitecoin(bulan);
+            loadDataLitecoin(bulan, tahun);
         else if (value == "Ripple")
-            loadDataRipple(bulan);
+            loadDataRipple(bulan, tahun);
         else if (value == "Stellar")
-            loadDataStellar(bulan);
+            loadDataStellar(bulan, tahun);
     }//GEN-LAST:event_OkMouseClicked
 
     private void jComboBox2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox2MouseClicked
@@ -248,20 +300,85 @@ public class Table extends javax.swing.JPanel {
         model.addColumn("Fluktuasi");
     }//GEN-LAST:event_jComboBox2MouseClicked
 
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        String ket = jComboBox2.getSelectedItem().toString();
+        String bulan = jComboBox1.getSelectedItem().toString();
+        String tahun = jComboBox3.getSelectedItem().toString();
+
+        jLabel4.setText("Tabel Historical Data " + ket);
+        
+        if (tahun.equals("All") && bulan.equals("All"))
+            jLabel6.setText("pada semua bulan dan semua tahun");
+        else if (bulan.equals("All"))
+            jLabel6.setText("pada tahun " + tahun);
+        else if (tahun.equals("All"))
+            jLabel6.setText("dibulan " + bulan + " di semua tahun");
+        else if (!tahun.equals("All") && !bulan.equals("All"))
+            jLabel6.setText("pada bulan " + bulan + " pada tahun " + tahun);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
+
+    private void jComboBox3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox3ItemStateChanged
+        // TODO add your handling code here:
+        
+        String ket = jComboBox2.getSelectedItem().toString();
+        String bulan = jComboBox1.getSelectedItem().toString();
+        String tahun = jComboBox3.getSelectedItem().toString();
+
+        jLabel4.setText("Tabel Historical Data " + ket);
+        
+        if (tahun.equals("All") && bulan.equals("All"))
+            jLabel6.setText("pada semua bulan dan semua tahun");
+        else if (bulan.equals("All"))
+            jLabel6.setText("pada tahun " + tahun);
+        else if (tahun.equals("All"))
+            jLabel6.setText("dibulan " + bulan + " di semua tahun");
+        else if (!tahun.equals("All") && !bulan.equals("All"))
+            jLabel6.setText("pada bulan " + bulan + " pada tahun " + tahun);
+    }//GEN-LAST:event_jComboBox3ItemStateChanged
+
+    private void OkItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_OkItemStateChanged
+        // TODO add your handling code here:
+//        String ket = jComboBox2.getSelectedItem().toString();
+//        String bulan = jComboBox1.getSelectedItem().toString();
+//        String tahun = jComboBox3.getSelectedItem().toString();
+//
+//        jLabel4.setText("Tabel Historical Data " + ket);
+//        
+//        if (tahun.equals("All") && bulan.equals("All"))
+//            jLabel6.setText("pada semua bulan dan semua tahun");
+//        else if (bulan.equals("All"))
+//            jLabel6.setText("pada tahun " + tahun);
+//        else if (tahun.equals("All"))
+//            jLabel6.setText("dibulan " + bulan + " di semua tahun");
+//        else if (!tahun.equals("All") && !bulan.equals("All"))
+//            jLabel6.setText("pada bulan " + bulan + " pada tahun " + tahun);
+    }//GEN-LAST:event_OkItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Ok;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
-    private void loadDataBitcoin(String key) {
+    private void loadDataBitcoin(String key, String tahun) {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         BitcoinController bitcoin = new BitcoinController();
@@ -275,8 +392,15 @@ public class Table extends javax.swing.JPanel {
 
             for (int i = 0; i < size; i++) {
                 String currMonth = subList.get(i).getDate().substring(3, 6);
+                String currYear = subList.get(i).getDate().substring(7, 11);
+                //String year = tahun.substring(2, 3);
                 
-                if (key.equals("All")){
+                System.out.println("currYear :" + currYear);
+                System.out.println("Data year : " + subList.get(i).getDate());
+//                System.out.println("year :" + year);
+                System.out.println("Tahun : " + tahun);
+                
+                if (key.equals("All") && tahun.equals("All")){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
@@ -286,18 +410,20 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
                     model.addRow(rowData);
                 }
-                else if (currMonth.equals(key)) {
+                
+                
+                else if (tahun.equals("All") && currMonth.equals(key)) {
 
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
@@ -308,12 +434,54 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if (currYear.equals(tahun) && currMonth.equals("All")){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if(currMonth.equals(key) && currYear.equals(tahun)){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
@@ -323,7 +491,7 @@ public class Table extends javax.swing.JPanel {
         }
     }
 
-    private void loadDataBitcoinCash(String key) {
+    private void loadDataBitcoinCash(String key, String tahun) {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         BitcoinCashController bitcoinCash = new BitcoinCashController();
@@ -337,8 +505,15 @@ public class Table extends javax.swing.JPanel {
 
             for (int i = 0; i < size; i++) {
                 String currMonth = subList.get(i).getDate().substring(3, 6);
+                String currYear = subList.get(i).getDate().substring(7, 11);
+                //String year = tahun.substring(2, 3);
                 
-                if (key.equals("All")){
+                System.out.println("currYear :" + currYear);
+                System.out.println("Data year : " + subList.get(i).getDate());
+//                System.out.println("year :" + year);
+                System.out.println("Tahun : " + tahun);
+                
+                if (key.equals("All") && tahun.equals("All")){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
@@ -348,18 +523,20 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
                     model.addRow(rowData);
                 }
-                else if (currMonth.equals(key)) {
+                
+                
+                else if (tahun.equals("All") && currMonth.equals(key)) {
 
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
@@ -370,12 +547,54 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if (currYear.equals(tahun) && currMonth.equals("All")){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if(currMonth.equals(key) && currYear.equals(tahun)){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
@@ -385,7 +604,7 @@ public class Table extends javax.swing.JPanel {
         }
     }
 
-    private void loadDataLitecoin(String key) {
+    private void loadDataLitecoin(String key, String tahun) {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         LitecoinController liteCoin = new LitecoinController();
@@ -399,8 +618,15 @@ public class Table extends javax.swing.JPanel {
 
             for (int i = 0; i < size; i++) {
                 String currMonth = subList.get(i).getDate().substring(3, 6);
+                String currYear = subList.get(i).getDate().substring(7, 11);
+                //String year = tahun.substring(2, 3);
                 
-                if (key.equals("All")){
+                System.out.println("currYear :" + currYear);
+                System.out.println("Data year : " + subList.get(i).getDate());
+//                System.out.println("year :" + year);
+                System.out.println("Tahun : " + tahun);
+                
+                if (key.equals("All") && tahun.equals("All")){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
@@ -410,18 +636,20 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
                     model.addRow(rowData);
                 }
-                else if (currMonth.equals(key)) {
+                
+                
+                else if (tahun.equals("All") && currMonth.equals(key)) {
 
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
@@ -432,12 +660,54 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if (currYear.equals(tahun) && currMonth.equals("All")){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if(currMonth.equals(key) && currYear.equals(tahun)){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
@@ -447,7 +717,7 @@ public class Table extends javax.swing.JPanel {
         }
     }
 
-    private void loadDataRipple(String key) {
+    private void loadDataRipple(String key, String tahun) {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
         RippleController ripple = new RippleController();
@@ -461,8 +731,15 @@ public class Table extends javax.swing.JPanel {
 
             for (int i = 0; i < size; i++) {
                 String currMonth = subList.get(i).getDate().substring(3, 6);
+                String currYear = subList.get(i).getDate().substring(7, 11);
+                //String year = tahun.substring(2, 3);
                 
-                if (key.equals("All")){
+//                System.out.println("currYear :" + currYear);
+//                System.out.println("Data year : " + subList.get(i).getDate());
+////                System.out.println("year :" + year);
+//                System.out.println("Tahun : " + tahun);
+                
+                if (key.equals("All") && tahun.equals("All")){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
@@ -472,18 +749,20 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
                     model.addRow(rowData);
                 }
-                else if (currMonth.equals(key)) {
+                
+                
+                else if (tahun.equals("All") && currMonth.equals(key)) {
 
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
@@ -494,12 +773,54 @@ public class Table extends javax.swing.JPanel {
                     }
                     Object[] rowData = new Object[]{
                         subList.get(i).getDate(),
-                        subList.get(i).getOpen() + " $",
-                        subList.get(i).getHigh() + " $",
-                        subList.get(i).getLow() + " $",
-                        subList.get(i).getClose() + " $",
-                        subList.get(i).getVolume() + " $",
-                        subList.get(i).getMarketCap() + " $",
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if (currYear.equals(tahun) && currMonth.equals("All")){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if(currMonth.equals(key) && currYear.equals(tahun)){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
                         Double.valueOf(twoDForm.format(fluktuasi)) + "%"
                     };
 
@@ -510,7 +831,7 @@ public class Table extends javax.swing.JPanel {
 
     }
 
-    private void loadDataEtherium(String key) {
+    private void loadDataEtherium(String key, String tahun) {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
 
@@ -525,8 +846,15 @@ public class Table extends javax.swing.JPanel {
 
             for (int i = 0; i < size; i++) {
                 String currMonth = subList.get(i).getDate().substring(3, 6);
+                String currYear = subList.get(i).getDate().substring(7, 11);
+                //String year = tahun.substring(2, 3);
                 
-                if (key.equals("All")){
+                System.out.println("currYear :" + currYear);
+                System.out.println("Data year : " + subList.get(i).getDate());
+//                System.out.println("year :" + year);
+                System.out.println("Tahun : " + tahun);
+                
+                if (key.equals("All") && tahun.equals("All")){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
@@ -547,8 +875,52 @@ public class Table extends javax.swing.JPanel {
 
                     model.addRow(rowData);
                 }
-                else if (currMonth.equals(key)) {
+                
+                
+                else if (tahun.equals("All") && currMonth.equals(key)) {
 
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if (currYear.equals(tahun) && currMonth.equals("All")){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if(currMonth.equals(key) && currYear.equals(tahun)){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
@@ -574,7 +946,7 @@ public class Table extends javax.swing.JPanel {
 
     }
 
-    private void loadDataStellar(String key) {
+    private void loadDataStellar(String key, String tahun) {
         model.getDataVector().removeAllElements();
         model.fireTableDataChanged();
 
@@ -589,8 +961,15 @@ public class Table extends javax.swing.JPanel {
 
             for (int i = 0; i < size; i++) {
                 String currMonth = subList.get(i).getDate().substring(3, 6);
+                String currYear = subList.get(i).getDate().substring(7, 11);
+                //String year = tahun.substring(2, 3);
                 
-                if (key.equals("All")){
+                System.out.println("currYear :" + currYear);
+                System.out.println("Data year : " + subList.get(i).getDate());
+//                System.out.println("year :" + year);
+                System.out.println("Tahun : " + tahun);
+                
+                if (key.equals("All") && tahun.equals("All")){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
@@ -611,8 +990,52 @@ public class Table extends javax.swing.JPanel {
 
                     model.addRow(rowData);
                 }
-                else if (currMonth.equals(key)) {
+                
+                
+                else if (tahun.equals("All") && currMonth.equals(key)) {
 
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if (currYear.equals(tahun) && currMonth.equals("All")){
+                    double fluktuasi;
+                    DecimalFormat twoDForm = new DecimalFormat("#.##");
+                    if (i == 0) {
+                        fluktuasi = 0;
+                    } else {
+                        fluktuasi = (subList.get(i).getClose() - subList.get(i - 1).getClose()) / subList.get(i - 1).getClose() * 100;
+                    }
+                    Object[] rowData = new Object[]{
+                        subList.get(i).getDate(),
+                        subList.get(i).getOpen(),
+                        subList.get(i).getHigh(),
+                        subList.get(i).getLow(),
+                        subList.get(i).getClose(),
+                        subList.get(i).getVolume(),
+                        subList.get(i).getMarketCap(),
+                        Double.valueOf(twoDForm.format(fluktuasi)) + "%"
+                    };
+
+                    model.addRow(rowData);
+                }
+                else if(currMonth.equals(key) && currYear.equals(tahun)){
                     double fluktuasi;
                     DecimalFormat twoDForm = new DecimalFormat("#.##");
                     if (i == 0) {
