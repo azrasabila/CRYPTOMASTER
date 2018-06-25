@@ -267,13 +267,15 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         setColor(jPanel2);
+        jPanel6.removeAll();
+        jPanel6.add(new Cryptocurrency());
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
         setColor(jPanel5);
-        //Table table = new Table();
         jPanel6.removeAll();
         jPanel6.add(new Table());
+        jPanel6.validate();
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MousePressed
@@ -331,7 +333,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    public javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 
     public void setColor(JPanel panel){
@@ -341,5 +343,7 @@ public class Dashboard extends javax.swing.JFrame {
     public void resetColor(JPanel panel){
         panel.setBackground(new java.awt.Color(36,70,193));
     }
+    
+    
     
 }
