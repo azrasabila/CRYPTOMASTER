@@ -31,8 +31,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -42,6 +40,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -49,43 +49,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(36, 70, 193));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2.setBackground(new java.awt.Color(36, 70, 193));
-        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel2MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel2MouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Bitcoin_25px_1.png")); // NOI18N
-        jLabel2.setText("CRYPTOCURRENCIES");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel2)
-                .addContainerGap(76, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel2)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 222, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(36, 70, 193));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,7 +65,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Home_25px.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Home_25px.png"))); // NOI18N
         jLabel4.setText("HOME");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -146,7 +109,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Combo_Chart_25px.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Combo_Chart_25px.png"))); // NOI18N
         jLabel1.setText("CHART");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -183,7 +146,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Data_Sheet_25px.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Data_Sheet_25px.png"))); // NOI18N
         jLabel3.setText("DATASET");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -210,11 +173,55 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel21.setText("CRYPTOMASTER");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 31, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\Untitled-200.jpg")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-200.jpg"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 300, -1));
 
         jPanel6.setLayout(new java.awt.CardLayout());
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 1, 1030, 710));
+
+        jPanel7.setBackground(new java.awt.Color(36, 70, 193));
+        jPanel7.setPreferredSize(new java.awt.Dimension(123, 66));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel7MouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel7MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jPanel7MouseReleased(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Bitcoin_25px.png"))); // NOI18N
+        jLabel6.setText("CRYPTOCURRENCY");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel6)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel6)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 290, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -228,14 +235,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void jPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseExited
         resetColor(jPanel4);
     }//GEN-LAST:event_jPanel4MouseExited
-
-    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
-        setColor(jPanel2);
-    }//GEN-LAST:event_jPanel2MouseEntered
-
-    private void jPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseExited
-        resetColor(jPanel2);
-    }//GEN-LAST:event_jPanel2MouseExited
 
     private void jPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseEntered
         setColor(jPanel5);
@@ -263,13 +262,10 @@ public class Dashboard extends javax.swing.JFrame {
         setColor(jPanel4);
         jPanel6.removeAll();
         jPanel6.add(new Chart());
+        Chart chart = new Chart();
+        chart.Bitcoin("All", "All", "Market Cap");
+        
     }//GEN-LAST:event_jPanel4MouseClicked
-
-    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
-        setColor(jPanel2);
-        jPanel6.removeAll();
-        jPanel6.add(new Cryptocurrency());
-    }//GEN-LAST:event_jPanel2MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
         setColor(jPanel5);
@@ -285,6 +281,28 @@ public class Dashboard extends javax.swing.JFrame {
     private void jPanel4MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseReleased
         //resetColor(jPanel4);
     }//GEN-LAST:event_jPanel4MouseReleased
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        setColor(jPanel7);
+        jPanel6.removeAll();
+        jPanel6.add(new Cryptocurrency());
+    }//GEN-LAST:event_jPanel7MouseClicked
+
+    private void jPanel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseEntered
+        setColor(jPanel7);
+    }//GEN-LAST:event_jPanel7MouseEntered
+
+    private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
+        resetColor(jPanel7);
+    }//GEN-LAST:event_jPanel7MouseExited
+
+    private void jPanel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel7MousePressed
+
+    private void jPanel7MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel7MouseReleased
 
     /**
      * @param args the command line arguments
@@ -323,17 +341,17 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     public javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 
     public void setColor(JPanel panel){

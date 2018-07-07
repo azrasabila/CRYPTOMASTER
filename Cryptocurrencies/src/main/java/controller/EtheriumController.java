@@ -74,44 +74,95 @@ public class EtheriumController {
         return this.etheriumMarketCap;
     }
      
-   private void montlyChart() {
+   private void montlyChart(String key) {
         EtheriumController sub = new EtheriumController();
-        List<MarketCapModel> subList;
-
+     List<MarketCapModel> subList;
+        long Filter = 0;
         subList = sub.getList();
 
         if (!subList.isEmpty()) {
 
             int size = subList.size();
             long eachMonth = 0;
+
             String mm = subList.get(0).getDate().substring(3, 6);
-            
+
             for (int i = 0; i < size; i++) {
                 String currMonth = subList.get(i).getDate().substring(3, 6);
-
+                if (null != key) {
+                    switch (key) {
+                        case "Open":
+                            Filter = (long) subList.get(i).getOpen();
+                            //       judul = "Open";
+                            break;
+                        case "MarketCap":
+                            Filter = subList.get(i).getMarketCap();
+                            //     judul = "MarketCap";
+                            break;
+                        case "Close":
+                            Filter = (long) subList.get(i).getClose();
+                            //   judul = "Close";
+                            break;
+                        case "Volume":
+                            Filter = subList.get(i).getVolume();
+                            // judul = "Volume";
+                            break;
+                        case "Low":
+                            Filter = (long) subList.get(i).getLow();
+                            //judul = "Low";
+                            break;
+                        case "High":
+                            Filter = (long) subList.get(i).getHigh();
+                            //judul = "High";
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 if (currMonth.equals(mm)) {
-                    eachMonth += subList.get(i).getMarketCap();
-                    
-                   
+                    eachMonth += Filter;
                 } else {
-                    
+
                     MarketCapModel sum = new MarketCapModel();
                     String date = subList.get(i).getDate().substring(3);
                     sum.setDate(date);
+                    if (null != key) {
+                    switch (key) {
+                        case "Open":
+                            sum.setOpen(eachMonth);
+                            break;
+                        case "MarketCap":
+                            sum.setMarketCap(eachMonth);
+                            break;
+                        case "Close":
+                            sum.setClose(eachMonth);
+                            break;
+                        case "Volume":
+                            sum.setVolume((int) eachMonth);
+                            break;
+                        case "Low":
+                            sum.setLow(eachMonth);
+                            break;
+                        case "High":
+                            sum.setHigh(eachMonth);
+                            break;
+                        default:
+                            break;
+                    }
+                    }
                     sum.setMarketCap(eachMonth);
                     this.monthlyMarketCap.add(sum);
 
                     mm = subList.get(i).getDate().substring(3, 6);
-                    eachMonth = 0 + subList.get(i).getMarketCap();
-
+                    eachMonth = 0 + Filter;
                 }
             }
         }
     }
 
-    public List<MarketCapModel> getListMonthly() {
+    public List<MarketCapModel> getListMonthly(String key) {
         if (this.monthlyMarketCap.isEmpty()) {
-            montlyChart();
+            montlyChart(key);
         }
         return this.monthlyMarketCap;
     }

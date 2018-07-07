@@ -390,17 +390,17 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jPanel5" max="32767" attributes="0"/>
-                      <Component id="jPanel6" max="32767" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanel5" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel6" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel9" min="-2" max="-2" attributes="0"/>
                       <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -440,7 +440,7 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -449,7 +449,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="F:\belajar\SEMESTER 2\Teknik Pemrograman\Project\Cryptocurrencies\src\main\java\Icons\icons8_Combo_Chart_48px.png"/>
+                  <Image iconType="3" name="/icons8_Combo_Chart_48px.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -535,14 +535,14 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="F:\belajar\SEMESTER 2\Teknik Pemrograman\Project\Cryptocurrencies\src\main\java\Icons\icons8_Bitcoin_25px_1.png"/>
+                  <Image iconType="3" name="/icons8_Bitcoin_25px_1.png"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="F:\belajar\SEMESTER 2\Teknik Pemrograman\Project\Cryptocurrencies\src\main\java\Icons\icons8_Ethereum_25px.png"/>
+                  <Image iconType="3" name="/icons8_Ethereum_25px.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -600,7 +600,7 @@
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="F:\belajar\SEMESTER 2\Teknik Pemrograman\Project\Cryptocurrencies\src\main\java\Icons\icons8_Data_Sheet_50px.png"/>
+                  <Image iconType="3" name="/icons8_Data_Sheet_50px.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -656,7 +656,7 @@
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="F:\belajar\SEMESTER 2\Teknik Pemrograman\Project\Cryptocurrencies\src\main\java\Icons\icons8_About_48px_1.png"/>
+                  <Image iconType="3" name="/icons8_About_48px_1.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -709,7 +709,7 @@
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="F:\belajar\SEMESTER 2\Teknik Pemrograman\Project\Cryptocurrencies\src\main\java\Icons\Untitled-2.jpg"/>
+                  <Image iconType="3" name="/Untitled-2.jpg"/>
                 </Property>
               </Properties>
             </Component>

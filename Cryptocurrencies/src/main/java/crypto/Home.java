@@ -274,7 +274,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Combo_Chart_48px.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Combo_Chart_48px.png"))); // NOI18N
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -302,7 +302,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -322,9 +322,9 @@ public class Home extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 57, 203));
         jLabel6.setText("CRYPTOCURRENCIES");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Bitcoin_25px_1.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Bitcoin_25px_1.png"))); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Ethereum_25px.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Ethereum_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -375,7 +375,7 @@ public class Home extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(0, 57, 203));
         jLabel18.setText("DATA SHEET");
 
-        jLabel19.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_Data_Sheet_50px.png")); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_Data_Sheet_50px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -417,7 +417,7 @@ public class Home extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 57, 203));
         jLabel4.setText(" ABOUT");
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\icons8_About_48px_1.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8_About_48px_1.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -446,7 +446,7 @@ public class Home extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("CRYPTOMASTER");
 
-        jLabel20.setIcon(new javax.swing.ImageIcon("F:\\belajar\\SEMESTER 2\\Teknik Pemrograman\\Project\\Cryptocurrencies\\src\\main\\java\\Icons\\Untitled-2.jpg")); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Untitled-2.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -502,15 +502,15 @@ public class Home extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel22)
                 .addContainerGap())
         );
@@ -570,18 +570,27 @@ public class Home extends javax.swing.JFrame {
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
 //        Dashboard dashboard = new Dashboard();
 //        Table table = new Table();
+        
         dashboard.setVisible(true);
+        dashboard.jPanel6.removeAll();
+        dashboard.jPanel6.add(new Table());
         this.setVisible(false);
         
     }//GEN-LAST:event_jPanel9MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
         dashboard.setVisible(true);
+        dashboard.jPanel6.removeAll();
+        dashboard.jPanel6.add(new Chart());
+        Chart chart = new Chart();
+        chart.Bitcoin("All", "All", "Market Cap");
         this.setVisible(false);
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
         dashboard.setVisible(true);
+        dashboard.jPanel6.removeAll();
+        dashboard.jPanel6.add(new Cryptocurrency());
         this.setVisible(false);
     }//GEN-LAST:event_jPanel6MouseClicked
 
@@ -670,6 +679,8 @@ public class Home extends javax.swing.JFrame {
     public void resetColor(JPanel panel){
         panel.setBackground(new java.awt.Color(240,240,240));
     }    
+    
+    
     
 }
 

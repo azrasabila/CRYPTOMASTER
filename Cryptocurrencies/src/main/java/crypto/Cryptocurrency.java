@@ -38,7 +38,7 @@ public class Cryptocurrency extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(204, 204, 204)
                 .addComponent(jLabel1)
-                .addContainerGap(530, Short.MAX_VALUE))
+                .addContainerGap(337, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
